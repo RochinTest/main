@@ -20,15 +20,20 @@ public class Main {
             n = (int) (Math.random() * 9 + 1);
             // System.out.println("" + n);
             riders[i] = new int[n];
-           // System.out.println("riders[" + i + "].length= " + riders[i].length);
+           System.out.println("riders[" + i + "].length= " + riders[i].length);
         }
 
-
-//        for (int i = 0; i < riders.length; i++) {
-//            for (int j = 0; j < riders[i].length; j++) {
-//                riders[i][j] = (int) (Math.random() * (10) + 1);
-//            }
-//        }
+int temp =0; int tt=0;
+      for (int i = 0; i < m ; i++) {
+         for (int j=0; j< m ; j++) {
+             if (riders[i].length < riders[j].length) {
+                 temp = riders[j].length;
+                 tt = riders[i].length;
+                 riders[j] = new int[tt];
+                 riders[i] = new int[temp];
+             }
+         }
+        }
 
         for (final int[] iLine : riders) {
             for (int element : iLine) {
